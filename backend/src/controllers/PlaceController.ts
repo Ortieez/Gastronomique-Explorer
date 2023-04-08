@@ -12,6 +12,11 @@ class PlaceController {
         const places = await this.placeService.getAllPlaces();
         res.json(places);
     }
+
+    public async createPlace(req: Request, res: Response) {
+        const place = await this.placeService.createPlace(req.body);
+        res.json(place);
+    }
 }
 
 export default PlaceController;
