@@ -6,7 +6,7 @@
 
 - NodeJS v18.14.2 (or higher)
 - NPM v9.5.1 (or higher)
-- ![MongoDB for Windows](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-6.0.5-signed.msi) v4.4.4 (with mongo atlas, GUI for MongoDB)
+- [MongoDB for Windows](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-6.0.5-signed.msi) v4.4.4 (with mongo atlas, GUI for MongoDB)
 - nodemon `npm install -g nodemon`
 
 ## To start server
