@@ -1,13 +1,13 @@
 import express = require('express');
 import mongoose from 'mongoose';
 import morgan = require('morgan');
-import PlaceRoutes from './routes/PlaceRoutes';
+import PlaceRoute from './routes/PlaceRoute';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
-app.use('/api/places', PlaceRoutes);
+app.use('/api/places', PlaceRoute);
 
 mongoose
   .connect('mongodb://127.0.0.1:27017/gastronomique')

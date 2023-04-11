@@ -4,8 +4,7 @@
   "description": "Backend of the gastronomique explorer project",
   "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon",
-    "test": "ts-mocha --type-check --timeout 10000 ./src/tests/*"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
