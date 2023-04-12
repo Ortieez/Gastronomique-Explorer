@@ -6,7 +6,7 @@ export interface Place extends Document {
     address: string;
     longtitude: number;
     latitude: number;
-    image: Buffer;
+    image: String;
 }
 
 const PlaceSchema: Schema = new Schema({
@@ -15,7 +15,7 @@ const PlaceSchema: Schema = new Schema({
     address: { type: String, required: true },
     longtitude: { type: Number, required: true },
     latitude: { type: Number, required: true },
-    image: { type: Buffer, required: false, contentType: String },
+    image: { type: String, required: false },
 });
 
 export default mongoose.model<Place>('Place', PlaceSchema);
