@@ -23,6 +23,10 @@ export default {
    this.setupLeafletMap();
  },
 };
+
+fetch('/api/places')
+.then(response => response.json())
+.then(text => console.log(text))
 </script>
 
 <template>
