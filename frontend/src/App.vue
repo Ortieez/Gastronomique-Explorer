@@ -25,7 +25,7 @@ export default {
 };
 
 fetch('/api/places')
-.then(response => response.json())
+.then(response => response.text())
 .then(text => console.log(text))
 </script>
 
