@@ -17,7 +17,7 @@ class PlaceController {
     }
 
     public async createPlace(req: Request, res: Response) {     
-        if (req.files[0] !== undefined && req.files[0]) {
+        if (req.files !== undefined) {
             req.body.image = Buffer.from(req.files[0].buffer).toString('base64');
         } else {
             req.body.image =  fs.readFileSync(path.join(__dirname, '..', 'assets', 'placeholder.jpg'), {encoding: 'base64'});
