@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  description: |
+    This is a simple backend solution 
+    for the project Gastronomique Explorer
+
+  version: 0.0.1
+  title: Gastronomique Explorer API
+  contact:
+    name: Adam 'ortieez' Lipert
+    url: https://github.com/ortieez
+
+  x-logo:
+    url: "https://i.imgur.com/KtaC4Vw.jpg"
+    altText: Gastronomique Explorer Logo
+  license:
+    name: MIT License
+    url: "https://opensource.org/license/mit/"
+  
+x-tagGroups:
+  - name: Enpoindts
+    tags:
+      - places
+  - name: Models
+    tags:
+      - place_model
+
+  
+paths:
+  /api/places/getAllPlaces:
+    parameters:
+      - name: Accept-Language
+        in: header
+        description: "The language you prefer for messages. Supported values are en-AU, en-CA, en-GB, en-US"
+        example: en-US
+        required: false
+    get:
+      summary: Get all places
+      tags:
+        - places
+      responses:
+        "200":
+          description: A list of places
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Place"
+    post:
+      summary: Create a new place
+      tags:
+        - places
+      requestBody:
+        description: Place object to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Place"
+      responses:
+        "200":
+          description: The created place
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Place"
+        "400": 
+          description: Something you entered was wrong
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /places/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the place to retrieve
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get a place by ID
+      responses:
+        "200":
+          description: The requested place
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Place"
+    put:
+      summary: Update a place by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the place to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Place object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Place"
+      responses:
+        "200":
+          description: The updated place
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Place"
+    delete:
+      summary: Delete a place by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the place to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The deleted place
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Place"
+components:
+  schemas:
+    Place:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        address:
+          type: string
+        longtitude:
+          type: number
+        latitude: 
+          type: number
+        image:
+          type: string
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
