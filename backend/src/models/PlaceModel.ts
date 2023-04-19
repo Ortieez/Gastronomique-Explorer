@@ -6,7 +6,7 @@ export interface Place extends Document {
     address: string;
     longtitude: number;
     latitude: number;
-    image: String;
+    image: string;
 }
 
 const PlaceSchema: Schema = new Schema({
