@@ -24,5 +24,5 @@
 ## Contributions
 | Kdo | Co |
 | ----- | --- |
-| Adam Lipert | Práce na backendu, vytvoření api pro použití na frontendu, pomáhání Simonovi jak implementovat API na frontendu |
+| Adam Lipert | Práce na backendu, vytvoření api pro použití na frontendu, pomáhání Simonovi jak implementovat API na frontendu, Vytvoření README.md |
 | Simon Kašpar | tvorba úplně základního zobrazení dat na mapě (později jsme se dohodnuli, že VUE je pro něj složité, tak začal dělat jiný projekt, který vám nejspíše již odevzdal) |
